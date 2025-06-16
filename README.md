@@ -1,50 +1,28 @@
-📧Email Spam Classifier
+Email Spam Classification (Naive Bayes)
 
-This project uses Python and machine learning to classify SMS messages as Spam or Ham (not spam). The model is trained on a real-world dataset using TF-IDF features and a Naive Bayes classifier.
+This is a student project where I built a spam classifier using the Naive Bayes algorithm and Python. The goal is to detect whether a given message is spam or ham (not spam).
 
-📁Dataset
-File: SMSSpamCollection.tsv
-Format: Tab-separated (.tsv)
-Contains 5,572 SMS messages
-Columns:
-label: spam or ham
-text: the message content
+Dataset
+I used a dataset called SMSSpamCollection.tsv, which contains around 5500 messages. Each message has a label (spam or ham) and the message text.
+Example:
 
-🛠️ Technologies Used
-Python
-Jupyter Notebook
-pandas, scikit-learn, matplotlib, seaborn
-Machine Learning: Naive Bayes
-NLP preprocessing (lowercasing, punctuation & digit removal, TF-IDF)
-📊 Steps Performed
-Data Loading
-Text Cleaning
-Label Encoding
-TF-IDF Vectorization
-Train-Test Split
-Model Training (Naive Bayes)
-Accuracy Evaluation
-Custom Message Prediction
-Visualization: Ham vs Spam message count
-🔍 Sample Output
-Accuracy: 0.9749
-predict_message("Free prize awaits! Text WIN to 12345")
-# Output: Spam
+spam   goldviking (29/M) is inviting you to be his friend. ...
+ham    Dont let studying stress you out.
+ham    That's y u haf 2 keep me busy...
 
-predict_message("Hey, are we still on for dinner?")
-# Output: Ham
-📊 Visualization
 
-A simple bar chart shows message distribution between ham and spam.
 
-📦 How to Run
-Download or clone this repository
-Open the Jupyter Notebook
-Make sure SMSSpamCollection.tsv is in the same folder
-Run the notebook step-by-step
-Try predicting your own messages!
-💡 Future Ideas
-Use more models (SVM, Logistic Regression)
-Add more NLP cleaning (stopwords, stemming)
-Try cross-validation and evaluation metrics
-Export the model for web or app use
+What the Code Does???
+Loads and explores the dataset
+Cleans the text (removes numbers, punctuation, etc.)
+Converts labels (spam/ham) to numbers
+Transforms the text into numerical features using TF-IDF
+Splits data into training and testing sets
+Trains a Multinomial Naive Bayes model
+Predicts new messages and shows accuracy
+Visualizes spam vs ham counts
+Shows distribution of message lengths
+Example Prediction
+The model can predict if a message like
+"Congratulations! You've won a lottery!"
+is spam or not.
